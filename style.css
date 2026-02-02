@@ -1,0 +1,290 @@
+/* ===============================
+   GLOBAL RESET & VARIABLES
+================================ */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --bg: #0b0f1a;
+  --card: rgba(255, 255, 255, 0.06);
+  --border: rgba(255, 255, 255, 0.12);
+  --text: #e5e7eb;
+  --muted: #9ca3af;
+  --primary: #7c7cff;
+  --primary-glow: rgba(124, 124, 255, 0.45);
+  --success: #22c55e;
+  --danger: #ef4444;
+}
+
+/* ===============================
+   BODY
+================================ */
+body {
+  font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  background:
+    radial-gradient(1200px 600px at 20% -10%, rgba(124,124,255,0.15), transparent),
+    radial-gradient(900px 500px at 90% 10%, rgba(34,197,94,0.12), transparent),
+    var(--bg);
+  min-height: 100vh;
+  padding: 40px;
+  color: var(--text);
+}
+
+/* ===============================
+   CONTAINER (GLASS CARD)
+================================ */
+.container {
+  max-width: 1300px;
+  margin: auto;
+  background: linear-gradient(
+    180deg,
+    rgba(255,255,255,0.08),
+    rgba(255,255,255,0.03)
+  );
+  backdrop-filter: blur(18px);
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  padding: 30px;
+  box-shadow:
+    0 0 0 1px rgba(255,255,255,0.03),
+    0 30px 80px rgba(0,0,0,0.7);
+}
+
+/* ===============================
+   HEADER
+================================ */
+h1 {
+  text-align: center;
+  font-size: 30px;
+  font-weight: 700;
+  margin-bottom: 30px;
+  letter-spacing: 0.4px;
+  background: linear-gradient(90deg, #ffffff, #bdbdff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* ===============================
+   FORM
+================================ */
+form {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+  margin-bottom: 26px;
+}
+
+input,
+select {
+  background: rgba(0,0,0,0.35);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 12px 14px;
+  font-size: 14px;
+  color: var(--text);
+  transition: all 0.2s ease;
+}
+
+input::placeholder {
+  color: var(--muted);
+}
+
+input:focus,
+select:focus {
+  outline: none;
+  border-color: var(--primary);
+  box-shadow: 0 0 0 2px var(--primary-glow);
+}
+
+form button {
+  grid-column: span 3;
+  padding: 14px;
+  border-radius: 12px;
+  border: none;
+  cursor: pointer;
+  font-size: 15px;
+  font-weight: 600;
+  color: #fff;
+  background: linear-gradient(
+    135deg,
+    #7c7cff,
+    #4f46e5
+  );
+  box-shadow:
+    0 8px 30px rgba(79,70,229,0.45),
+    inset 0 1px 0 rgba(255,255,255,0.2);
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+form button:hover {
+  transform: translateY(-1px);
+  box-shadow:
+    0 12px 40px rgba(79,70,229,0.6),
+    inset 0 1px 0 rgba(255,255,255,0.25);
+}
+
+/* ===============================
+   CONTROLS
+================================ */
+.controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 22px;
+}
+
+.controls select,
+.controls input[type="file"] {
+  background: rgba(0,0,0,0.35);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 10px 12px;
+  color: var(--text);
+}
+
+.controls button {
+  padding: 10px 16px;
+  border-radius: 10px;
+  border: none;
+  font-weight: 600;
+  cursor: pointer;
+  color: #0b0f1a;
+  background: linear-gradient(135deg, #22c55e, #16a34a);
+  box-shadow: 0 8px 25px rgba(34,197,94,0.35);
+}
+
+/* ===============================
+   TABLE (CSV VIEWER)
+================================ */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background: rgba(0,0,0,0.35);
+  border-radius: 14px;
+  overflow: hidden;
+  border: 1px solid var(--border);
+}
+
+thead {
+  background: rgba(255,255,255,0.05);
+}
+
+th {
+  padding: 14px;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--muted);
+  border-bottom: 1px solid var(--border);
+}
+
+td {
+  padding: 14px;
+  font-size: 14px;
+  border-bottom: 1px solid var(--border);
+  text-align: center;
+}
+
+tbody tr {
+  transition: background 0.15s ease;
+}
+
+tbody tr:hover {
+  background: rgba(124,124,255,0.08);
+}
+
+/* ===============================
+   STATUS DROPDOWN
+================================ */
+td select {
+  background: rgba(0,0,0,0.45);
+  border: 1px solid var(--border);
+  color: var(--text);
+  padding: 6px 8px;
+  border-radius: 8px;
+  font-size: 13px;
+}
+
+/* ===============================
+   LINKS & ACTIONS
+================================ */
+a {
+  color: #a5b4fc;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+.delete {
+  color: var(--danger);
+  font-weight: 600;
+  cursor: pointer;
+}
+
+/* ===============================
+   RESPONSIVE
+================================ */
+@media (max-width: 900px) {
+  body {
+    padding: 20px;
+  }
+
+  form {
+    grid-template-columns: 1fr;
+  }
+
+  form button {
+    grid-column: span 1;
+  }
+
+  .controls {
+    flex-direction: column;
+  }
+
+  td, th {
+    font-size: 13px;
+  }
+}
+/* ===============================
+   FOOTER (COPYRIGHT)
+================================ */
+.footer {
+  margin-top: 30px;
+  padding-top: 18px;
+  text-align: center;
+  font-size: 13px;
+  color: rgba(229, 231, 235, 0.55);
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  letter-spacing: 0.03em;
+}
+/* ===============================
+   STATUS COLORS
+================================ */
+.status-Applied {
+  color: #9ca3af;
+  border-color: rgba(156, 163, 175, 0.4);
+}
+
+.status-Interview {
+  color: #7c7cff;
+  border-color: rgba(124, 124, 255, 0.6);
+  box-shadow: 0 0 10px rgba(124, 124, 255, 0.35);
+}
+
+.status-Offer {
+  color: #22c55e;
+  border-color: rgba(34, 197, 94, 0.6);
+  box-shadow: 0 0 10px rgba(34, 197, 94, 0.35);
+}
+
+.status-Rejected {
+  color: #ef4444;
+  border-color: rgba(239, 68, 68, 0.6);
+  box-shadow: 0 0 10px rgba(239, 68, 68, 0.35);
+}

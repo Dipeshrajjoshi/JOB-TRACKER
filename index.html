@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Job Application Tracker</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<div class="container">
+  <h1>Job Application Tracker</h1>
+
+  <form id="jobForm">
+    <input type="text" id="company" placeholder="Company Name" required />
+    <input type="text" id="role" placeholder="Role Title" required />
+
+    <select id="roleType" required>
+      <option value="">Role Type</option>
+      <option>QA</option>
+      <option>Software</option>
+      <option>Cloud</option>
+      <option>DevOps</option>
+    </select>
+
+    <select id="status" required>
+      <option value="">Status</option>
+      <option>Applied</option>
+      <option>Interview</option>
+      <option>Rejected</option>
+      <option>Offer</option>
+    </select>
+
+    <input type="date" id="date" required />
+    <input type="url" id="resume" placeholder="Resume Link (Google Drive)" required />
+
+    <button type="submit">Add Application</button>
+  </form>
+
+  <div class="controls">
+    <select id="filterStatus">
+      <option value="">Filter by Status</option>
+      <option>Applied</option>
+      <option>Interview</option>
+      <option>Rejected</option>
+      <option>Offer</option>
+    </select>
+
+    <select id="filterRole">
+      <option value="">Filter by Role</option>
+      <option>QA</option>
+      <option>Software</option>
+      <option>Cloud</option>
+      <option>DevOps</option>
+    </select>
+
+    <input type="file" id="csvInput" accept=".csv" />
+    <button type="button" onclick="exportCSV()">Export CSV</button>
+  </div>
+
+  <!-- CSV DATA VIEW (LIVE) -->
+  <table>
+    <thead>
+      <tr>
+        <th>Company</th>
+        <th>Role</th>
+        <th>Type</th>
+        <th>Status</th>
+        <th>Date</th>
+        <th>Resume</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody id="jobList"></tbody>
+  </table>
+  <footer class="footer">
+  © 2026 Dipesh Raj Joshi. All rights reserved.
+  </footer>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
