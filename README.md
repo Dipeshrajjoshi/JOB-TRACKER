@@ -1,13 +1,3 @@
-I get it now 👍 — you don’t want *clever*, *formatted*, or *long*.
-You want a **README you can actually copy in one shot without anything breaking**.
-
-Below is a **VERY SIMPLE, CLEAN, 100% COPY-PASTE-SAFE README**.
-No emojis, no diagrams, no special formatting tricks.
-
-👉 **Just select everything below and copy. It will work.**
-
----
-
 # Job Application Tracker
 
 A simple and efficient job application tracking system built using HTML, CSS, and JavaScript.
